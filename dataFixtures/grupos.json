@@ -1,0 +1,25 @@
+[
+  {
+    "model":"grupo",
+    "items":[
+      {
+         
+          "anyo": "2015/16",
+          "grupo": "2DAW",
+          "subgrupo": "2DAWO",
+          "ensenyanza": "Desarrollo de Aplicaciones Web",
+          "curso": "2",
+          "id": 1
+      },
+      {
+         
+          "anyo": "2015/16",
+          "grupo": "1DAW",
+          "subgrupo": "1DAWO",
+          "ensenyanza": "Desarrollo de Aplicaciones Web",
+          "curso": "1",
+          "id": 2
+      }
+    ]
+  }
+]

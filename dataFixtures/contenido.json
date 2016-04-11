@@ -1,0 +1,33 @@
+[
+	{
+		"model":"contenido",
+	    "items":[
+		    {
+		  		"texto":"Reconocimiento, uso y explicación de las categorías gramaticales: sustantivo, adjetivo, determinante, pronombre, verbo, adverbio, preposición, conjunción e interjección.",
+
+				"bloque": 1
+				
+			},
+		    {
+		  		"texto":"Reconocimiento, uso y explicación de los elementos constitutivos de la palabra. Procedimientos para formar palabras." ,
+
+				"bloque": 1
+				
+			},
+		    {
+		  		"texto":"Conocimiento, uso y valoración de las normas ortográficas y gramaticales reconociendo su valor social y la necesidad de ceñirse a ellas para conseguir una comunicación eficaz." ,
+
+				"bloque": 1
+				
+			},
+		    {
+		  		"texto":"Manejo de diccionarios y otras fuentes de consulta en papel y formato digital sobre el uso de la lengua." ,
+
+				"bloque": 1
+				
+			}
+
+		]
+	}
+
+]

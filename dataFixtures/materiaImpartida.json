@@ -1,0 +1,14 @@
+[
+    {
+        "model":"materiaImpartida",
+        "items":[
+         {
+          "materia":1,
+          "profesor":1,
+          "grupo":2 
+        }
+       
+       
+        ]
+    }
+]

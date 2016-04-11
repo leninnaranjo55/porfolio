@@ -1,0 +1,25 @@
+[
+	{
+		"model":"criterioevaluacion",
+	    "items":[
+		    {
+		  		"numero": "1",
+		  		"texto":"Aplicar los conocimientos sobre la lengua y sus normas de uso para resolver problemas de comprensión de textos orales y escritos y para la composición y revisión progresivamente autónoma de los textos propios y ajenos, utilizando la terminología gramatical necesaria para la explicación de los diversos usos de la lengua.",
+		  		"materia": 1
+			},
+			{
+		  		"numero": "2",
+		  		"texto":"Reconocer y analizar la estructura de las palabras pertenecientes a las distintas categorías gramaticales, distinguiendo las flexivas de las no flexivas.",
+		  		"materia": 1
+			},
+			{
+		  		"numero": "3",
+		  		"texto":"Usar de forma efectiva los diccionarios y otras fuentes de consulta, tanto en papel como en formato digital para resolver dudas en relación al manejo de la lengua y para enriquecer el propio vocabulario.",
+		  		"materia": 1
+			}
+
+
+		]
+	}
+
+]

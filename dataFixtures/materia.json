@@ -1,0 +1,18 @@
+[
+	{
+		"model":"materia",
+	    "items":[
+		    {
+		  		"codigo":"1" ,
+
+				"materia": "Servidor",
+
+				"ensenanza": "Desarrollo de entorno servidor",
+
+				"curso":"2" 
+			}
+
+		]
+	}
+
+]

@@ -1,0 +1,13 @@
+[
+{
+    "model":"profesor",
+    "items":[
+      {
+          "apellidos": "Profesor Apellidos",
+          "nombre": "Profesor Nombre",
+          "email": "profesor@murciaeduca.es",
+          "id": 1
+      }
+    ]
+  }
+]

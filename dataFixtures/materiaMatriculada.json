@@ -1,0 +1,14 @@
+[
+	{
+		"model":"materiaMatriculada",
+	    "items":[
+		    {
+		  		"expediente": 1,
+		  		"materia": "Servidor",
+		  		"profesor": 1,
+		  		"anyo": "2016"
+			}
+		]
+	}
+
+]
