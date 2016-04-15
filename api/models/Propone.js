@@ -9,8 +9,6 @@ module.exports = {
 
   attributes: {
 
-  	profesor: { model: 'profesor' },
-
   	estandares: { model: 'estandar'}
 
   }

@@ -18,15 +18,14 @@ module.exports = {
     email : { type: 'string', email: true, size: 45},
 
     fechaNac : {type: 'date'},
+
+    user: {
+        model: 'user'
+    },
    
     grupos: {
         collection : 'grupo',
         via : 'alumnos'
-    },
-
-    autoevaluaciones: {
-    	collection: 'autoevalua',
-    	via: 'alumno'
     }
 
   }

@@ -9,8 +9,6 @@ module.exports = {
 
   attributes: {
 
-  	alumno: { model: 'alumno' },
-
   	estandares: { model: 'estandar'},
 
   	valor: { type: 'int', size: 1},
