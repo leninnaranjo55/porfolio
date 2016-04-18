@@ -47,6 +47,17 @@ module.exports.routes = {
   ***************************************************************************/
  'GET /mismaterias' : [
     'ProfesorController.materias'
+  ],
+
+  'GET r|^/materia/(\\d+)/contenidos$|materiaId' : [
+    'MateriaController.load',
+    'MateriaController.contenido'
+  ],
+
+
+  'GET r|^/criterioevaluacion/(\\d+)/estandares$|criterioevaluacionId' : [
+    'CriterioevaluacionController.load',
+    'CriterioevaluacionController.estandar'
   ]
 
 };

@@ -5,7 +5,8 @@
 		    {
 		  		"numero": "1",
 		  		"descripcion":"Conocimiento de la lengua",
-		  		"materia": 1
+		  		"materia": 1,
+		  		"id": 1
 			}
 
 		]

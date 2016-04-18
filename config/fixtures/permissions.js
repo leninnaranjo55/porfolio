@@ -13,6 +13,7 @@ exports.create = function () {
 			    promesas.push({ role: 'profesor', model: modeloP, action: 'update'});
 			    promesas.push({ role: 'profesor', model: modeloP, action: 'delete', relation: 'owner'});
 	});
+				 promesas.push({ role: 'profesor', model: 'Materia', action: 'read'});
 
 	arrayModelosAlumnos.forEach(function(modeloA){
 				promesas.push({ role: 'alumno', model: modeloA, action: 'read'}); 

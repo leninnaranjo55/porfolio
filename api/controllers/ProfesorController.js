@@ -7,7 +7,7 @@
 
 module.exports = {
 
-	materias: function(res, req, next){
+	materias: function(req, res, next){
 		Profesor.findOne({
 			where: { user: req.session.passport.user}
 		}).then( function(profesorencontrado){
@@ -18,6 +18,8 @@ module.exports = {
 			})
 		})
 	}
+
+
 	
 };
 
