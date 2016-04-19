@@ -5,17 +5,20 @@
 		    {
 		  		"numero": "1",
 		  		"texto": "Reconoce y explica el uso de las categorías gramaticales en los textos utilizando este conocimiento para corregir errores de concordancia en textos propios y ajenos.",
-		  	    "criterioevaluacion":1
+		  	    "criterioevaluacion":1,
+		  	    "id":1
 			},
 			 {
 		  		"numero": "2",
 		  		"texto": "Conoce y utiliza adecuadamente las formas verbales en sus producciones orales y escritas.",
-		  	    "criterioevaluacion":1
+		  	    "criterioevaluacion":2,
+		  	    "id":2
 			},
 			{
 		  		"numero": "3",
 		  		"texto": "Reconoce y explica los elementos constitutivos de la palabra: raíz y afijos, aplicando este conocimiento a la mejora de la comprensión de textos escritos y al enriquecimiento de su vocabulario activo.",
-		  	    "criterioevaluacion":2
+		  	    "criterioevaluacion":1,
+		  	    "id":3
 			}
 
 		]

@@ -19,14 +19,14 @@ module.exports = {
 	},
 
 
-	criterio: function(req, res, next) {
+	/*criterio: function(req, res, next) {
 
 		Criterioevaluacion.find({
 			where: {id: req.contenido.id}
 		}).then( function(criterios){
 			res.json(criterios);
 		})
-	}
+	}*/
 
 	
 };

@@ -19,7 +19,7 @@ module.exports = {
   		via: 'estandares'
   	},
 
-  	profesores: {
+  	propuestos: {
   		collection: 'profesor',
   		via: 'estandares'
   	},

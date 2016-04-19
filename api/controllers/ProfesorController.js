@@ -17,7 +17,21 @@ module.exports = {
 				res.json(materiasencontradas);
 			})
 		})
-	}
+	},
+
+	loadId: function(req, res, next){
+		Profesor.findOne({
+			where: { user: req.session.passport.user}
+		}).then( function(profesorencontrado){
+			if(profesorencontrado) {
+				req.profesorId = profesorencontrado.id;
+				next()
+			} else {
+				next(new Error("No es profesor"));
+			}
+
+		})
+	} 
 
 
 	

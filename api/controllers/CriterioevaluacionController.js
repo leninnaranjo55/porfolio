@@ -18,14 +18,14 @@ module.exports = {
 		}).catch(function(error){next(error);});
 	},
 	
-	estandar: function(req, res, next) {
+	/*estandar: function(req, res, next) {
 
 		Estandar.find({
 			where: {criterioevaluacion: req.criterioevaluacion.id}
 		}).then( function(estandares){
 			res.json(estandares);
 		})
-	}
+	}*/
 
 };
 

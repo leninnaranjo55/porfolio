@@ -54,10 +54,20 @@ module.exports.routes = {
     'MateriaController.contenido'
   ],
 
+  'POST r|^/estandar/(\\d+)/propuesto$|estandarId' : [
+    'EstandarController.load',
+    'ProfesorController.loadId',
+    'EstandarController.propuesto'
+  ]
+
+ /* 'GET r|^/contenido/(\\d+)/criterios$|contenidoId' : [
+    'ContenidoController.load',
+    'ContenidoController.criterio'
+  ],
 
   'GET r|^/criterioevaluacion/(\\d+)/estandares$|criterioevaluacionId' : [
     'CriterioevaluacionController.load',
     'CriterioevaluacionController.estandar'
-  ]
+  ]*/
 
 };
