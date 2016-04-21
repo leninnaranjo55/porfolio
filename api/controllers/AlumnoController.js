@@ -6,6 +6,20 @@
  */
 
 module.exports = {
-	
+
+	load: function(req, res, next){
+		Alumno.findOne({
+			where: { user: req.session.passport.user}
+		}).then( function(alumnoencontrado){
+			if(alumnoencontrado) {
+				req.alumno = alumnoencontrado;
+				next()
+			} else {
+				next(new Error("No es alumno"));
+			}
+
+		})
+	} 
+
 };
 

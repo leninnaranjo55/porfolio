@@ -26,8 +26,24 @@ module.exports = {
     grupos: {
         collection : 'grupo',
         via : 'alumnos'
-    }
+    },
+
+    misprofesores: function(cb) {
+
+        var arrayprofesores = [];
+
+        MateriaMatriculada.find({
+            where : { expediente: this.id}
+        }).populate('profesor').then ( function(listaMaterias){
+            listaMaterias.forEach( function(materiaMatriculada){
+                materiaMatriculada.profesor.forEach( function(profesor){
+                    arrayprofesores.push(profesor);
+                })
+            })
+            cb(arrayprofesores);
+    })
 
   }
-};
 
+}
+};

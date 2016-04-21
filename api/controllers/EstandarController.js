@@ -24,6 +24,17 @@ module.exports = {
 			res.json(estandar);
 		});
 		
-	}
+	},
+
+	getListado: function(req, res, next) {
+	
+		req.alumno.misprofesores(function(profesores){
+			res.json(profesores);
+
+		});
+		
+
+		
+	},
 };
 

@@ -58,6 +58,12 @@ module.exports.routes = {
     'EstandarController.load',
     'ProfesorController.loadId',
     'EstandarController.propuesto'
+  ],
+
+
+  'GET /lista' : [
+    'AlumnoController.load',
+    'EstandarController.getListado'
   ]
 
  /* 'GET r|^/contenido/(\\d+)/criterios$|contenidoId' : [

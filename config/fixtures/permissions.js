@@ -5,7 +5,7 @@ var Promise = require('bluebird');
 
 exports.create = function () {
 	var arrayModelosProfesor = ['Bloque','Contenido','Criterioevaluacion','Estandar', 'Profesor'];
-	var arrayModelosAlumnos = ['Estandar','Criterioevaluacion','Autoevalua'];
+	var arrayModelosAlumnos = ['Estandar','Criterioevaluacion','Autoevalua', 'Alumno'];
 	var promesas = [];
 	arrayModelosProfesor.forEach(function(modeloP){
 			    promesas.push({ role: 'profesor', model: modeloP, action: 'read'});
