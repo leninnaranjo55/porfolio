@@ -19,6 +19,12 @@
 		  		"texto": "Reconoce y explica los elementos constitutivos de la palabra: raíz y afijos, aplicando este conocimiento a la mejora de la comprensión de textos escritos y al enriquecimiento de su vocabulario activo.",
 		  	    "criterioevaluacion":1,
 		  	    "id":3
+			},
+			{
+		  		"numero": "4",
+		  		"texto": "Reconoce y explica ",
+		  	    "criterioevaluacion":3,
+		  	    "id":4
 			}
 
 		]

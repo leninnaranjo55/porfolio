@@ -54,17 +54,36 @@ module.exports.routes = {
     'MateriaController.contenido'
   ],
 
-  'POST r|^/estandar/(\\d+)/propuesto$|estandarId' : [
+  'POST r|^/estandar/(\\d+)/grupo/(\\d+)/propuesto$|estandarId|grupoId' : [
     'EstandarController.load',
-    'ProfesorController.loadId',
+    'ProfesorController.load',
     'EstandarController.propuesto'
   ],
 
-
+/*
   'GET /lista' : [
     'AlumnoController.load',
     'EstandarController.getListado'
+  ],*/
+
+  'GET /mimateria' : [
+    'AlumnoController.load',
+    'AlumnoController.getMateria'
+  ],
+
+  'GET r|^/materia/(\\d+)/estandares$|materiaId' : [
+    'AlumnoController.load',
+    'EstandarController.getListado',
+    'MateriaController.load',
+    'MateriaController.estandares'
+  ],
+
+  'POST r|^/estandar/(\\d+)/evaluar$|estandarId' : [
+    'EstandarController.load',
+    'AlumnoController.load',
+    'EstandarController.evaluar'
   ]
+
 
  /* 'GET r|^/contenido/(\\d+)/criterios$|contenidoId' : [
     'ContenidoController.load',

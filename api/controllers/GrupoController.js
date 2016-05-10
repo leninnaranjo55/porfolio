@@ -6,6 +6,17 @@
  */
 
 module.exports = {
+
+load: function(req, res, next) {
+		Grupo.findOne({
+			where: { id: Number(req.params.grupoId)}
+		}).then(function(grupo){
+			if(grupo) {
+				req.grupo = grupo;
+				next();
+			} else { next(new Error('No existe el grupo con el id ' + req.params.grupoId));}
+		}).catch(function(error){next(error);});
+	}
 	
 };
 

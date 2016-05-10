@@ -12,6 +12,28 @@
 				"curso":"2",
 
 				"id": 1 
+			},
+			{
+		  		"codigo":"2" ,
+
+				"materia": "Cliente",
+
+				"ensenanza": "Desarrollo de entorno Cliente",
+
+				"curso":"2",
+
+				"id": 2
+			},
+			{
+		  		"codigo":"3" ,
+
+				"materia": "Html",
+
+				"ensenanza": "Html",
+
+				"curso":"2",
+
+				"id": 3
 			}
 
 		]

@@ -1,5 +1,5 @@
 /**
-* Autoevalua.js
+* Propuestos.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -9,14 +9,17 @@ module.exports = {
 
   attributes: {
 
-  	estandares: { model: 'estandar'},
+	estandar: {
+		model: 'estandar'
+	},
 
-  	alumno: {model: 'alumno'},
+	profesor: {
+		model: 'profesor'
+	},
 
-  	valor: { type: 'int', size: 1},
-
-
+	grupo: {
+		model: 'grupo'
+	}
 
   }
 };
-

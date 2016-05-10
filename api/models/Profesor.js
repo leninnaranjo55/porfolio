@@ -27,7 +27,8 @@ module.exports = {
 
 	estandares: {
 		collection: 'estandar',
-		via: 'propuestos'
+		via: 'profesores',
+		through: 'propuesto'
 	}
 
   }

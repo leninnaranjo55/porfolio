@@ -9,6 +9,7 @@
           "subgrupo": "2DAWO",
           "ensenyanza": "Desarrollo de Aplicaciones Web",
           "curso": "2",
+          "alumnos": [1, 2],
           "id": 1
       },
       {
@@ -18,6 +19,7 @@
           "subgrupo": "1DAWO",
           "ensenyanza": "Desarrollo de Aplicaciones Web",
           "curso": "1",
+          "alumnos": [],
           "id": 2
       }
     ]

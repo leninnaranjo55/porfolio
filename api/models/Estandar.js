@@ -19,9 +19,10 @@ module.exports = {
   		via: 'estandares'
   	},
 
-  	propuestos: {
+  	profesores: {
   		collection: 'profesor',
-  		via: 'estandares'
+  		via: 'estandares',
+      through: 'propuesto'
   	},
 
   	criterioevaluacion: { model: 'criterioevaluacion'}

@@ -4,7 +4,19 @@
 	    "items":[
 		    {
 		  		"expediente": 1,
-		  		"materia": "Servidor",
+		  		"materia": 1,
+		  		"profesor": 1,
+		  		"anyo": "2016"
+			},
+			{
+		  		"expediente": 1,
+		  		"materia": 2,
+		  		"profesor": 2,
+		  		"anyo": "2016"
+			},
+			{
+		  		"expediente": 1,
+		  		"materia": 3,
 		  		"profesor": 1,
 		  		"anyo": "2016"
 			}

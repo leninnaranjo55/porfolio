@@ -19,21 +19,39 @@ module.exports = {
 		})
 	},
 
-	loadId: function(req, res, next){
+	load: function(req, res, next){
 		Profesor.findOne({
 			where: { user: req.session.passport.user}
 		}).then( function(profesorencontrado){
 			if(profesorencontrado) {
-				req.profesorId = profesorencontrado.id;
+				req.profesor = profesorencontrado;
 				next()
 			} else {
 				next(new Error("No es profesor"));
 			}
 
 		})
-	} 
+	},
+
+	AlumnoGrupo: function(req, res, next) {		
+
+		Alumno.find({
+			where: {grupos: [req.grupo]}
+		}).then( function(alumnos){
+			req.alumnos= alumnos;
+		})
+	},
+
+	AlumnoEstandar: function(req, res, next) {
+
+		Criterioevaluacion.findOne({
+			where: {estandares: req.estandar.Criterioevaluacion}
+		}).then( function(micriterio){
+
+		})
 
 
 	
-};
+}
 
+}

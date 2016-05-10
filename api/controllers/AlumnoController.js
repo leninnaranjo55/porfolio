@@ -10,7 +10,7 @@ module.exports = {
 	load: function(req, res, next){
 		Alumno.findOne({
 			where: { user: req.session.passport.user}
-		}).then( function(alumnoencontrado){
+		}).populate('grupos').then( function(alumnoencontrado){
 			if(alumnoencontrado) {
 				req.alumno = alumnoencontrado;
 				next()
@@ -19,7 +19,14 @@ module.exports = {
 			}
 
 		})
-	} 
+	},
+
+	getMateria: function(req, res, next) {
+
+		req.alumno.misMaterias(function(alumnos){
+			res.json(alumnos);
+		});
+	}
 
 };
 

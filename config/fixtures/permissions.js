@@ -5,7 +5,7 @@ var Promise = require('bluebird');
 
 exports.create = function () {
 	var arrayModelosProfesor = ['Bloque','Contenido','Criterioevaluacion','Estandar', 'Profesor'];
-	var arrayModelosAlumnos = ['Estandar','Criterioevaluacion','Autoevalua', 'Alumno'];
+	var arrayModelosAlumnos = ['Estandar','Criterioevaluacion','Autoevalua', 'Alumno', 'Materia'];
 	var promesas = [];
 	arrayModelosProfesor.forEach(function(modeloP){
 			    promesas.push({ role: 'profesor', model: modeloP, action: 'read'});
@@ -20,6 +20,7 @@ exports.create = function () {
 	});
 
 				promesas.push({ role: 'alumno', model: 'Autoevalua', action: 'create'}); 
+				promesas.push({ role: 'alumno', model: 'Estandar', action: 'create'}); 
 				promesas.push({ role: 'alumno', model: 'Autoevalua', action: 'update'});
 				promesas.push({ role: 'alumno', model:'Autoevalua' , action: 'delete', relation: 'owner'}); 
 

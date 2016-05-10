@@ -1,0 +1,24 @@
+[
+	{
+		"model":"propuesto",
+	    "items":[
+		    {
+		  		"profesor": 1,
+		  		"estandar":1,
+		  		"grupo":1
+			},
+			{
+		  		"profesor": 1,
+		  		"estandar":2,
+		  		"grupo":1
+			},
+			{
+		  		"profesor": 1,
+		  		"estandar":1,
+		  		"grupo":2
+			}
+
+		]
+	}
+
+]

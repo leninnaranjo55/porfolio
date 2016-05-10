@@ -37,6 +37,51 @@ module.exports = {
 			})
 		
 
+	},
+
+	estandares: function(req, res, next){
+
+		var arrayestandar = [];
+		// var estandarpropuesto = [];
+		
+		
+		sails.log.verbose(req.profesores);
+
+
+		Criterioevaluacion.find({
+			where : {materia: req.materia.id}
+		}).populate('estandares').then( function(criterios){
+			criterios.forEach( function(onecriterio){
+				onecriterio.estandares.forEach( function(unestandar){
+					arrayestandar.push(unestandar.id);
+				})
+
+			});
+			sails.log.verbose(arrayestandar);sails.log.verbose(req.alumno);
+
+					// Estandar.find({
+					// 	where : {id: arrayestandar}
+					// }).populate('propuestos', {where: {id: req.profesores}}).then( function(estandares){
+					// 	estandares.forEach( function(estandar){
+					// 		if(estandar.propuestos.length > 0){
+					// 			estandarpropuesto.push(estandar);
+					// 	}
+					// 	})
+						
+					// 	res.json(estandarpropuesto);
+					// 	});
+
+
+					Propuesto.find({
+						where : {estandar: arrayestandar, profesor: req.profesores, grupo: req.alumno.grupos[0].id}
+					}).populate('estandar').then( function(estandares){
+						
+						res.json(estandares);
+						});
+
+			//res.json(arrayestandar);
+			//req.estandares = arrayestandar;
+			});
 	}
 	
 };

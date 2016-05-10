@@ -31,19 +31,34 @@ module.exports = {
     misprofesores: function(cb) {
 
         var arrayprofesores = [];
-
+        //sails.log.verbose(this);
         MateriaMatriculada.find({
             where : { expediente: this.id}
         }).populate('profesor').then ( function(listaMaterias){
             listaMaterias.forEach( function(materiaMatriculada){
-                materiaMatriculada.profesor.forEach( function(profesor){
-                    arrayprofesores.push(profesor);
-                })
+                if(materiaMatriculada.profesor){
+                    arrayprofesores.push(materiaMatriculada.profesor.id);
+                }
             })
-            cb(arrayprofesores);
+        cb(arrayprofesores);
     })
 
-  }
+  },
+
+    misMaterias: function(cb) {
+
+        var arrayalumno = [];
+
+        MateriaMatriculada.find({
+            where : { expediente: this.id}
+        }).populate('materia').then ( function(ListaMateria){
+            ListaMateria.forEach( function(materiaAlum){
+                arrayalumno.push(materiaAlum.materia);
+            })
+            cb(arrayalumno);
+        })
+
+    }
 
 }
 };

@@ -19,7 +19,7 @@ module.exports = {
 	},
 	
 	propuesto: function(req, res, next) {
-		req.estandar.propuestos.add(req.profesorId);
+		req.estandar.profesores.add(req.profesor);
 		req.estandar.save(function(err, estandar){
 			res.json(estandar);
 		});
@@ -29,12 +29,25 @@ module.exports = {
 	getListado: function(req, res, next) {
 	
 		req.alumno.misprofesores(function(profesores){
-			res.json(profesores);
+			req.profesores= profesores;
+			next();
 
 		});
-		
-
-		
+	
 	},
+
+
+	evaluar: function(req, res, next) {
+
+		var valoracion = req.body.puntuacion;
+
+		Autoevalua.create({estandares: req.estandar, alumno: req.alumno, valor: valoracion}).exec(function createCB(err, created){
+  				res.send('Estandar ' + created.estandares + ' Alumno ' + created.alumno + ' Valor ' + created.valor);
+
+				});
+
+	}
+
+
 };
 
