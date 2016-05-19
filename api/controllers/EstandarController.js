@@ -42,6 +42,8 @@ module.exports = {
 		var valoracion = req.body.puntuacion;
 
 		Autoevalua.create({estandares: req.estandar, alumno: req.alumno, valor: valoracion}).exec(function createCB(err, created){
+  				
+
   				res.send('Estandar ' + created.estandares + ' Alumno ' + created.alumno + ' Valor ' + created.valor);
 
 				});

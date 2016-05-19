@@ -12,10 +12,45 @@ module.exports = function(req, res, next) {
   // User is allowed, proceed to the next policy, 
   // or if this is the last policy, the controller
   if (req.session.authenticated) {
-    return next();
-  }
+  	User.findOne({
+  		where: {id:req.session.passport.user}
+  	}).populate('roles').then( function(roleuser){
+
+  		roleuser.roles.forEach( function(role){
+  				if(role.name == 'alumno'){
+
+  					req.session.role = 'alumno';
+
+  				}else if(role.name == 'profesor'){
+
+  				    req.session.role = 'profesor';
+  				}  				
+  	    });
+
+  	    var promesas = [];
+
+  	    if(req.session.role == 'alumno'){
+  	    	promesas.push(Alumno.findOne({
+  				where: {user: req.session.passport.user}
+  			}));
+  		}else if(req.session.role == 'profesor'){
+  			promesas.push(Profesor.findOne({
+  				where: {user: req.session.passport.user}
+  			}));
+  		}
+
+  		Promise.all(promesas).then( function(persona){
+  			if(persona) {
+  				req.persona=persona[0];
+			}
+	    	return next();
+
+		});	  	
+	});
+  } else {
 
   // User is not allowed
   // (default res.forbidden() behavior can be overridden in `config/403.js`)
-  return res.forbidden('You are not permitted to perform this action.');
+  	return res.forbidden('You are not permitted to perform this action.');
+  }
 };

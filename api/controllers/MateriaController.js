@@ -75,14 +75,60 @@ module.exports = {
 					Propuesto.find({
 						where : {estandar: arrayestandar, profesor: req.profesores, grupo: req.alumno.grupos[0].id}
 					}).populate('estandar').then( function(estandares){
-						
-						res.json(estandares);
+						Autoevalua.find({
+							where: {alumno: req.alumno.id}
+						}).then( function(evaluados){
+							//res.json(evaluados);
+							estandares.forEach(function(estandar){
+								evaluados.forEach(function(evaluado){
+									if(estandar.estandar.id == evaluado.estandares)
+									{
+										estandar.evaluado = evaluado.valor;
+									}
+								});
+							});
+							res.json(estandares);
+   						 });
+
+						//
 						});
+
+
+
 
 			//res.json(arrayestandar);
 			//req.estandares = arrayestandar;
 			});
+
+		
+		
+	},
+
+	mismaterias: function(req, res, next){
+
+		var promesas = [];
+		var arraymat = [];
+
+		if(req.session.role == 'profesor'){
+			promesas.push(MateriaImpartida.find({
+					where: {profesor: req.persona.id}
+				}).populate('materia'));
+
+		}else if(req.session.role == 'alumno'){
+
+			promesas.push(MateriaMatriculada.find({
+            	where : { expediente: req.persona.id}
+       			}).populate('materia'));
+		}
+
+		Promise.all(promesas).then ( function(listaMateria){
+            listaMateria[0].forEach( function(unamateria){
+                arraymat.push(unamateria.materia);
+            })
+            		res.json(arraymat);
+            })
+
 	}
-	
+		
 };
 

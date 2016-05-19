@@ -46,7 +46,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
  'GET /mismaterias' : [
-    'ProfesorController.materias'
+    'MateriaController.mismaterias'
   ],
 
   'GET r|^/materia/(\\d+)/contenidos$|materiaId' : [
@@ -66,10 +66,10 @@ module.exports.routes = {
     'EstandarController.getListado'
   ],*/
 
-  'GET /mimateria' : [
+ /* 'GET /mimateria' : [
     'AlumnoController.load',
-    'AlumnoController.getMateria'
-  ],
+    'AlumnoController.getMateria',
+  ],*/
 
   'GET r|^/materia/(\\d+)/estandares$|materiaId' : [
     'AlumnoController.load',
@@ -83,6 +83,7 @@ module.exports.routes = {
     'AlumnoController.load',
     'EstandarController.evaluar'
   ]
+
 
 
  /* 'GET r|^/contenido/(\\d+)/criterios$|contenidoId' : [
