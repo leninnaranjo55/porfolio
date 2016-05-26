@@ -54,7 +54,7 @@ module.exports.routes = {
     'MateriaController.contenido'
   ],
 
-  'POST r|^/estandar/(\\d+)/grupo/(\\d+)/propuesto$|estandarId|grupoId' : [
+  'POST r|^/estandar/(\\d+)/grupo/(\\d+)/propuesto$|estandarId,grupoId' : [
     'EstandarController.load',
     'ProfesorController.load',
     'EstandarController.propuesto'

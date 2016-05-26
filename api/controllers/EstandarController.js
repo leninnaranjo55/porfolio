@@ -8,6 +8,7 @@
 module.exports = {
 
 	load: function(req, res, next) {
+		sails.log.verbose(req.params);
 		Estandar.findOne({
 			where: { id: Number(req.params.estandarId)}
 		}).then(function(estandar){
