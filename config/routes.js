@@ -82,6 +82,11 @@ module.exports.routes = {
     'EstandarController.load',
     'AlumnoController.load',
     'EstandarController.evaluar'
+  ],
+
+  'GET r|^/materia/(\\d+)/media|materiaId' : [
+    'MateriaController.load',
+    'MateriaController.media'
   ]
 
 

@@ -128,7 +128,55 @@ module.exports = {
             		res.json(arraymat);
             })
 
+	},
+
+	media: function(req, res, next){
+
+	Alumno.findOne({
+			where: { user: req.session.passport.user}
+		}).then( function(alumnoencontrado){
+			if(alumnoencontrado) {
+				//req.alumno = alumnoencontrado;
+				//next()
+				var arrayestandar = [];
+				
+				Criterioevaluacion.find({
+					where : {materia: req.materia.id}
+				}).populate('estandares').then( function(criterios){
+					criterios.forEach( function(onecriterio){
+						onecriterio.estandares.forEach( function(unestandar){
+							arrayestandar.push(unestandar.id);
+						})
+					});
+
+					Autoevalua.find({
+							where: {estandares: arrayestandar, alumno: alumnoencontrado.id}
+						}).then( function(evaluados){
+							evaluados.forEach( function(evaludo){
+								var suma=0;
+								
+
+							})
+							res.json(evaluados);
+					 });
+
+
+
+
+				});
+				sails.log.verbose(alumnoencontrado);
+				sails.log.verbose(arrayestandar);
+
+						
+
+				
+
+
+			} else {
+				next(new Error("No es alumno"));
+			}
+
+		})
 	}
-		
 };
 
