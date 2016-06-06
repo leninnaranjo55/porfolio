@@ -45,7 +45,7 @@ module.exports = {
 		// var estandarpropuesto = [];
 		
 		
-		sails.log.verbose(req.profesores);
+		//sails.log.verbose(req.profesores);
 
 
 		Criterioevaluacion.find({
@@ -57,7 +57,7 @@ module.exports = {
 				})
 
 			});
-			sails.log.verbose(arrayestandar);sails.log.verbose(req.alumno);
+			//sails.log.verbose(arrayestandar);sails.log.verbose(req.alumno);
 
 					// Estandar.find({
 					// 	where : {id: arrayestandar}
@@ -129,7 +129,7 @@ module.exports = {
             })
 
 	},
-
+/*
 	media: function(req, res, next){
 
 	Alumno.findOne({
@@ -139,6 +139,9 @@ module.exports = {
 				//req.alumno = alumnoencontrado;
 				//next()
 				var arrayestandar = [];
+				var suma=0;
+				var total=0;
+
 				
 				Criterioevaluacion.find({
 					where : {materia: req.materia.id}
@@ -152,12 +155,20 @@ module.exports = {
 					Autoevalua.find({
 							where: {estandares: arrayestandar, alumno: alumnoencontrado.id}
 						}).then( function(evaluados){
-							evaluados.forEach( function(evaludo){
-								var suma=0;
+
+							var div= evaluados.length;
+							sails.log.verbose(div);
+
+							evaluados.forEach( function(evaluado){
+
+								var num= parseInt(evaluado.valor);
+
+								suma+= num;
 								
 
 							})
-							res.json(evaluados);
+							total=suma/div;
+							res.json(total);
 					 });
 
 
@@ -177,6 +188,37 @@ module.exports = {
 			}
 
 		})
-	}
+	}*/
+
+
+	getPuntuacionMaxima: function(req, res, next){
+		
+
+		req.materia.PuntuacionMaxima(function(maxima){
+			//res.json(maxima);
+			req.maxima=maxima;
+			next();
+		});
+
+		},
+
+
+	getMediaAlumno: function(req, res, next){
+sails.log.verbose('en la media');
+		Alumno.findOne({
+			where: { user: req.session.passport.user}
+		}).then( function(alumnoencontrado){
+			if(alumnoencontrado) {
+				req.materia.MediaAlumno(alumnoencontrado.id, function(media){
+					res.json({maxima: req.maxima, media: media});
+				})
+
+			} else {
+				next(new Error("No es alumno"));
+			}
+		});
+	}	
+
+
 };
 

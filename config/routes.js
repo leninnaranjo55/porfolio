@@ -86,7 +86,8 @@ module.exports.routes = {
 
   'GET r|^/materia/(\\d+)/media|materiaId' : [
     'MateriaController.load',
-    'MateriaController.media'
+    'MateriaController.getPuntuacionMaxima',
+    'MateriaController.getMediaAlumno'
   ]
 
 
