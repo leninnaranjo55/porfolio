@@ -45,7 +45,7 @@ module.exports = {
 		// var estandarpropuesto = [];
 		
 		
-		sails.log.verbose(req.profesores);
+		//sails.log.verbose(req.profesores);
 
 
 		Criterioevaluacion.find({
@@ -57,7 +57,7 @@ module.exports = {
 				})
 
 			});
-			sails.log.verbose(arrayestandar);sails.log.verbose(req.alumno);
+			//sails.log.verbose(arrayestandar);sails.log.verbose(req.alumno);
 
 					// Estandar.find({
 					// 	where : {id: arrayestandar}
@@ -128,6 +128,50 @@ module.exports = {
             		res.json(arraymat);
             })
 
+	},
+
+
+	media: function(req, res, next){
+
+		var arrayestandar = [];
+
+		Alumno.findOne({
+			where: { user: req.session.passport.user}
+		}).populate('grupos').then( function(alumnoencontrado){
+			
+			if(alumnoencontrado) {
+				
+				Criterioevaluacion.find({
+					where : {materia: req.materia.id}
+				}).populate('estandares').then( function(criterios){
+					criterios.forEach( function(onecriterio){
+						onecriterio.estandares.forEach( function(unestandar){
+							arrayestandar.push(unestandar.id);
+						});
+						//res.json(arrayestandar);
+						Autoevalua.find({
+							where: {estandares: arrayestandar, alumno: alumnoencontrado.id}
+						}).then( function(evaluados){
+							
+							evaluados.forEach(function(evaluado){
+								res.json(evaluado);	
+							});
+						
+							
+   						 });
+
+							
+					});
+					
+
+
+				});
+
+			} else {
+				next(new Error("No es alumno"));
+			}
+
+		})
 	}
 		
 };

@@ -13,7 +13,7 @@ module.exports = {
 
   	alumno: {model: 'alumno'},
 
-  	valor: { type: 'int', size: 1},
+  	valor: { type: 'integer', size: 1},
 
 
 

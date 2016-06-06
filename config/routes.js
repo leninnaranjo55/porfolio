@@ -49,6 +49,11 @@ module.exports.routes = {
     'MateriaController.mismaterias'
   ],
 
+  'GET r|^/materia/(\\d+)/media$|materiaId' : [
+    'MateriaController.load',
+    'MateriaController.media'
+  ],
+
   'GET r|^/materia/(\\d+)/contenidos$|materiaId' : [
     'MateriaController.load',
     'MateriaController.contenido'
